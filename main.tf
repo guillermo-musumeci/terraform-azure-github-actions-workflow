@@ -14,8 +14,8 @@ resource "azurerm_virtual_network" "this" {
 
 # Create the Subnet
 resource "azurerm_subnet" "this" {
-  name                = "kopicloud-github-actions-subnet"  
-  address_prefix       = "10.10.10.0/24"
+  name                 = "kopicloud-github-actions-subnet"  
+  address_prefixes     = ["10.10.10.0/24"]
   virtual_network_name = azurerm_virtual_network.this.name
   resource_group_name  = azurerm_resource_group.this.name
 }
